@@ -18,7 +18,13 @@
     ```
     cd digital-charting-backend
     ```
-5. Installing the packages:
+
+5. In your terminal run this command:
+    ```
+    go install github.com/air-verse/air@latest
+    ```
+
+6. Installing the packages:
     ```
     go mod tidy
     ```
@@ -26,7 +32,7 @@
 
 ### Executing program
 
-1. Copy & paste `.env.sample` and rename the copied file to `.env`
+1. In your folder, copy & paste `.env.sample` file and rename the copied file to `.env`
 
 2. Running the server:
     ```
