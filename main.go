@@ -13,7 +13,7 @@ func main() {
 	utils.DotenvLoader()
 	router := gin.Default()
 	database.ConnectToDigitalChartingDB()
-	
+
 	ping := router.Group("/api")
 	{
 		ping.GET("/ping", controllers.Ping)

@@ -13,7 +13,7 @@ import (
 func ConnectToDigitalChartingDB() (*gorm.DB, context.Context) {
 	dsn := os.Getenv("DIGITAL_CHARTING_DB_URL")
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
-	
+
 	if err != nil {
 		panic("Failed to connect to database")
 	}
@@ -28,4 +28,3 @@ func ConnectToDigitalChartingDB() (*gorm.DB, context.Context) {
 
 	return db, ctx
 }
-

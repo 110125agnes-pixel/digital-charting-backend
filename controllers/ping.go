@@ -6,7 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func Ping(c * gin.Context) {
+func Ping(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
 		"result":  nil,
 		"message": "pong",
