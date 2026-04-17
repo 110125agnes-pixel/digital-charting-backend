@@ -3,7 +3,6 @@ package main
 import (
 	"os"
 
-	"github.com/110125agnes-pixel/digital-charting-backend/controllers"
 	"github.com/110125agnes-pixel/digital-charting-backend/database"
 	"github.com/110125agnes-pixel/digital-charting-backend/utils"
 	"github.com/gin-gonic/gin"
@@ -15,9 +14,13 @@ func main() {
 	database.ConnectToDigitalChartingDB()
 	database.ConnectToReferenceDB()
 
-	ping := router.Group("/api")
+	docMastersGroup := router.Group("/api/docMasters")
 	{
-		ping.GET("/ping", controllers.Ping)
+		docMastersGroup.GET("/hello", func (c * gin.Context) {
+			c.JSON(200, gin.H{
+				"message": "Hello World",
+			})
+		})
 	}
 
 	router.Run(":" + os.Getenv("PORT"))
