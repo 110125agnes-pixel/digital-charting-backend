@@ -22,6 +22,7 @@ func ConnectToDigitalChartingDB() (*gorm.DB, context.Context) {
 	if err := db.AutoMigrate(&models.User{}); err != nil {
 		panic("Failed to migrate database: " + err.Error())
 	}
+
 	// *** put all db.AutoMigrate() between this comment ***
 
 	ctx := context.Background()
