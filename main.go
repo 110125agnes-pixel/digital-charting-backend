@@ -18,6 +18,7 @@ func main() {
 	docMastersGroup := router.Group("/api/docMasters")
 	{
 		docMastersGroup.GET("/", controllers.GetDocMasters)
+		docMastersGroup.GET("/:docCode", controllers.GetDocMasterByDocCode)
 	}
 
 	router.Run(":" + os.Getenv("PORT"))
